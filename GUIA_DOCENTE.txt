@@ -1,0 +1,29 @@
+GUÍA PARA LA DOCENTE — PRUEBA INICIAL EN RENDER
+=================================================
+
+Objetivo: verificar que la aplicación didáctica AulaSoporte se despliega como un servicio PaaS gratuito.
+
+La aplicación es una demostración: no requiere base de datos, no incluye autenticación y no debe recibir datos reales de alumnado ni de personas.
+
+ANTES DE USARLA EN CLASE
+1. Descomprime el ZIP.
+2. Crea un repositorio GitHub privado y sube el contenido de la carpeta (package.json y server.js deben quedar en la raíz).
+3. En Render elige New > Web Service y conecta el repositorio.
+4. Configura Language: Node; Build Command: npm install; Start Command: npm start.
+5. Selecciona el plan FREE, no uno de pago.
+6. En Environment puedes añadir APP_NAME = AulaSoporte y APP_ENV = Prueba docente.
+7. Abre la URL que te proporcione Render y comprueba también /api/salud.
+8. Comprueba botones Nueva incidencia, filtro de estado y actualización de estado.
+9. Modifica APP_NAME en Render para observar la configuración del servicio.
+
+RESULTADO ESPERADO
+- Página con seis incidencias ficticias precargadas.
+- Cuatro tarjetas con contadores.
+- Alta de una incidencia ficticia y cambio de su estado.
+- Al reiniciar el servicio, las incidencias vuelven a los datos iniciales.
+
+LIMITACIÓN DIDÁCTICA
+Los cambios no son persistentes: se guardan en la memoria de Node.js y desaparecen con un reinicio. Esto permite evitar bases de datos y pagos en la práctica inicial.
+
+PROPUESTA DE CONTINUIDAD
+Cuando la profesora confirme el funcionamiento del despliegue, preparar una tarea definitiva para Moodle, con capturas y rúbrica, y opcionalmente otra versión con almacenamiento persistente.

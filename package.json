@@ -1,0 +1,9 @@
+{
+  "name": "gestor-incidencias-cloud",
+  "version": "1.0.0",
+  "description": "Aplicación didáctica de incidencias para despliegue PaaS en Render",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js", "dev": "node --watch server.js" },
+  "dependencies": { "express": "^4.21.2" }
+}
