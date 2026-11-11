@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aplicación didáctica para desplegar en la nube">
+  <title>AulaSoporte · Gestor de incidencias</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-icon">✳</span><span><strong id="brand-name">AulaSoporte</strong><small>GESTIÓN DE INCIDENCIAS</small></span></div>
+      <div class="nav-label">ESPACIO DE TRABAJO</div>
+      <a class="nav active" href="#panel"><span>▦</span> Panel de control</a>
+      <a class="nav" href="#incidencias"><span>≡</span> Incidencias</a>
+      <div class="sidebar-bottom"><div class="sidebar-dot"></div><div><strong>Aplicación de demostración</strong><small>Los datos se restablecen al reiniciar el servidor.</small></div></div>
+    </aside>
+    <main class="main" id="panel">
+      <header class="topbar"><div class="breadcrumb">Panel de control <span>/</span> Incidencias</div><div class="environment"><span class="live-dot"></span><span id="env-name">Demostración</span> · <span id="version">v1.0</span></div></header>
+      <div class="content">
+        <div class="heading"><div><div class="eyebrow">PANEL GENERAL</div><h1>Gestión de incidencias</h1><p>Consulta el estado de las solicitudes del equipo y registra nuevas incidencias.</p></div><button id="new-button" class="primary">＋ Nueva incidencia</button></div>
+        <section class="stats" aria-label="Estadísticas">
+          <article class="stat"><div class="stat-top"><span>Total de incidencias</span><span class="stat-icon slate">▣</span></div><strong id="stat-total">—</strong><small>Registradas en el sistema</small></article>
+          <article class="stat"><div class="stat-top"><span>Pendientes</span><span class="stat-icon orange">◷</span></div><strong id="stat-pendiente">—</strong><small>Por revisar</small></article>
+          <article class="stat"><div class="stat-top"><span>En curso</span><span class="stat-icon blue">↗</span></div><strong id="stat-curso">—</strong><small>En proceso de resolución</small></article>
+          <article class="stat"><div class="stat-top"><span>Resueltas</span><span class="stat-icon green">✓</span></div><strong id="stat-resuelta">—</strong><small>Finalizadas</small></article>
+        </section>
+        <section class="panel" id="incidencias">
+          <div class="panel-head"><div><h2>Listado de incidencias</h2><p>Supervisa las solicitudes y actualiza su estado.</p></div><div class="filters"><label><span class="sr-only">Buscar incidencias</span><input id="search" placeholder="⌕  Buscar incidencia..."></label><label><span class="sr-only">Filtrar por estado</span><select id="filter"><option value="">Todos los estados</option><option>Pendiente</option><option>En curso</option><option>Resuelta</option></select></label></div></div>
+          <div class="table-scroll"><table><thead><tr><th>ID</th><th>INCIDENCIA</th><th>CATEGORÍA</th><th>PRIORIDAD</th><th>ESTADO</th><th>RESPONSABLE</th><th>ACCIONES</th></tr></thead><tbody id="rows"><tr><td colspan="7">Cargando…</td></tr></tbody></table></div>
+          <footer class="panel-footer"><span id="count">Cargando incidencias…</span><span>Datos de demostración · Sin información personal real</span></footer>
+        </section>
+        <p class="footer-note">Proyecto educativo · Digitalización aplicada al sector productivo · 2.º DAM</p>
+      </div>
+    </main>
+  </div>
+  <dialog id="dialog"><form id="form" method="dialog"><div class="dialog-top"><div><div class="eyebrow">NUEVA SOLICITUD</div><h2>Registrar incidencia</h2></div><button class="close" type="button" id="close" aria-label="Cerrar">×</button></div><label>Título de la incidencia<input name="titulo" placeholder="Ej. El proyector no muestra imagen" minlength="5" maxlength="100" required></label><label>Categoría<select name="categoria"><option>Hardware</option><option>Software</option><option>Redes</option><option>Sistemas</option><option>Otros</option></select></label><label>Prioridad<select name="prioridad"><option>Media</option><option>Alta</option><option>Baja</option></select></label><div class="dialog-actions"><button class="secondary" type="button" id="cancel">Cancelar</button><button class="primary" type="submit">Crear incidencia</button></div></form></dialog>
+  <div id="message" role="status" aria-live="polite"></div>
+</body></html>
